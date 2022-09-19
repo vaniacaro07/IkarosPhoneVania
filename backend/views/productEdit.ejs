@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <enlace href="https: //fonts.googleapis.com/css2? family= Poppins:wght@300 & family= Roboto:wght@300 & display=swap" rel="hoja de estilo"></enlace>
+        <script src="https://kit.fontawesome.com/5309449a51.js" crossorigin="anonymous"></script>
+        <!-- linkeamos CSS -->
+        <link rel="stylesheet" href="/css/productEdit.css">
+    </head>
+<body>
+    <%- include('./partials/header'); %>
+    <main>
+
+        <div class="title">
+            <h2 class="product-title">Estás editando 
+				<i> <%= product.brand.brand %> </i> 
+				<i> <%= product.model %> </i>
+			</h2>
+        </div>
+
+        <div class="form-edit">
+
+			<form action="/edit/<%= product.id %>?_method=PATCH" method="POST" enctype="multipart/form-data"
+				class="form-container">
+
+				<div class="group generals">
+					<div class="name">
+						<label for="name">Marca:</label>
+						<input type="text" id="name" name="name" value="<%= product.brand.brand %>" class="form-input">
+					</div>
+					<div class="name">
+						<label for="name">Modelo:</label>
+						<input type="text" id="name" name="name" value="<%= product.model %>" class="form-input">
+					</div>
+					<div>
+						<label for="price">Precio:</label>
+						<input type="text" id="price" name="price" value="<%= product.price %>" class="form-input">
+					</div>
+					<div>
+						<label for="discount">Descuento:</label>
+						<input type="text" id="discount" name="discount" value="<%= product.discount %>" class="form-input">
+					</div>
+				</div>
+
+				<div class="group screen">
+					<div>
+						<label for="resolution">Resolución:</label>
+						<input type="text" id="resolution" name="resolution" value="<%= product.specification.resolution %>" class="form-input">
+					</div>
+					<div>
+						<label for="screen">Tamaño:</label>
+						<input type="text" id="screen" name="screen" value="<%= product.specification.size %>" class="form-input">
+					</div>		
+				</div>
+
+				<div class="group camera">
+					<div>
+						<label for="camera">Cámara:</label>
+						<input type="text" id="camera" name="camera" value="<%= product.specification.camera %>" class="form-input">
+					</div>
+					<div>
+						<label for="frontalCamera">Cámara frontal:</label>
+						<input type="text" id="frontalCamera" name="frontalCamera" value="<%= product.specification.frontalCamera %>" class="form-input">
+					</div>
+					<div class="recorder">
+						<label for="recorder">Resolución de video:</label>
+						<input type="text" id="recorder" name="recorder" value="<%= product.specification.recorder %>" class="form-input">
+					</div>					
+				</div>
+
+				<div class="group system">
+					<div>
+						<label for="rom" >Memoria interna:</label>
+						<input type="text" id="rom" name="rom" value="<%= product.specification.internalMemory %>" >
+					</div>
+					<div>
+						<label for="ram" >RAM:</label>
+						<input type="text" id="ram" name="ram" value="<%= product.specification.ram %>" >
+					</div>
+					<div>
+						<label for="externalMemory">Memoria eterna:</label>
+						<input type="text" id="externalMemory" name="externalMemory" value="<%= product.specification.externalMemory %>" class="form-input">
+					</div>
+					<div>
+						<label for="system">Sistema operativo:</label>
+						<input type="text" id="system" name="system" value="<%= product.system.system %>" >
+					</div>
+				</div>
+					
+				<div class="group category">
+					<label for="category">Categoría:</label>
+					<select name="category" id="category">
+						<option value="" disabled> Selecionar categoría </option>
+						<option value="in-sale" <%= product.category === 'in-sale' ? 'selected' : '' %> >En oferta</option>
+						<option value="smartphone" <%= product.category === 'smartphone' ? 'selected' : '' %> >Ultimos visitados</option>
+					</select>
+				</div>					
+					
+				<div class="group image">
+					<label for="image">Imagen</label>
+					<input type="file" name="image" >
+				</div>
+
+				<div class="group description">
+					<label for="description">Descipción:</label>
+					<textarea name="description" id="description" > <%= product.description %> </textarea>
+				</div>	
+
+				<button type="submit" class="btn-save">GUARDAR CAMBIOS</button>
+
+			</form>
+
+			<form action="/delete/<%= product.id %>?_method=DELETE" method="POST" class="form-btn-delete">
+				<button type="submit" class="btn-delete">ELIMINAR</button>
+			</form>
+
+		</div>
+
+    </main>
+    <footer>
+        <%- include ("./partials/footer")  %> 
+    </footer>
+</body>
+</html>

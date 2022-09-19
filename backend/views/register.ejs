@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Register Ikaro's Phones</title>
+
+        <enlace href="https: //fonts.googleapis.com/css2? family= Poppins:wght@300 & family= Roboto:wght@300 & display=swap" rel="hoja de estilo"></enlace>
+    
+        <script src="https://kit.fontawesome.com/5309449a51.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="css/register.css">
+    </head>
+    <body>
+        <%- include('./partials/headerForm'); %>
+
+        
+
+        <main>
+
+            <form method="POST" action="/register" class="form-register" enctype="multipart/form-data">
+
+                <h4 class="form-title"> Crear una cuenta </h4>
+                
+                <div class="form-container">
+
+                    <div class="container">
+                        <label for="full-name">Nombre y Apellido</label>
+                        <input type="text" placeholder="ejem.: Juan Ramirez" name="fullName" class="fullName
+                        <%= locals.errors && errors.fullName ? 'is-invalid' : null %>"   
+                        value="<%= locals.oldData ? oldData.fullName : null %>"
+                        >
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                        <i class="fa-solid fa-circle-check"></i>
+
+                        <p class="error"> El nombre de usuario debe tener de 4 a 16 dígitos y no puede estar vacío</p>
+
+                        <% if (locals.errors && errors.fullName) { %>
+                            <p class="error">  <%= errors.fullName.msg %> </p>
+                        <% } %>
+                         
+                        
+                    </div>
+                   
+                    <div class="container">
+                        <label for="email"> Ingresa tu email</label>
+                        <input type="text" placeholder="ejem.: example@gmail.com" name="email" class="email
+                        <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+                        value="<%= locals.oldData ? oldData.email : null %>"
+                        >
+
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                        <i class="fa-solid fa-circle-check"></i>
+
+                        <p class="error"> Email no puede estar vacio </p>
+
+                        
+                        <% if (locals.errors && errors.email) { %>
+                            <p class="error"><%= errors.email.msg %> </p>
+                        <% } %>
+                    </div>
+
+                    <div class="container">
+                        <label for="avatar"> Selecciona una imagen de perfil </label>
+                        <input type="file" name="avatar"
+                        class="valid  <%= locals.errors && errors.avatar? 'is-invalid' : null %>"
+                        value="<%= locals.oldData ? oldData.avatar : null %>"
+                        >
+                    </div>
+
+                    <div class="container">
+                        <label for="password"> Ingresa tu contraseña </label>
+                        <input type="password" placeholder="Escribir contraseña" name="password" class=" password
+                        <%= locals.errors && errors.password ? 'is-invalid' : null %>"
+                        > <i class="fa-solid fa-eye"></i>
+
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                        <i class="fa-solid fa-circle-check"></i>
+
+                        <p class="error"> La contraseña debe tener al menos 8 caracteres </p>
+
+
+                        <% if (locals.errors && errors.password) { %>
+                            <p class="error"> <%= errors.password.msg %> </p>
+                        <% } %>
+                    </div> 
+
+                </div>
+            
+                <button type="submit" class="btn-register" >REGISTRARME</button>
+
+                <div class="login">
+                    <a href="./login">¿Ya tiene cuenta? Inicie Sesion</a>
+                </div>
+
+            </form>
+            
+        </main>
+        <script src="/js/validations.js"></script>
+    </body>
+</html>

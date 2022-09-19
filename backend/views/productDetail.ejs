@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+        <link rel="stylesheet" href="/css/productDetail.css">
+        <script src="https://kit.fontawesome.com/5309449a51.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <%- include('./partials/header'); %>
+        <main>
+            <p class="title-detail">Detalle de producto</p>
+            <section class="producto">
+                <img src="/images/products/<%= product.image %> " class="product-img">
+                <div class="detalles-producto">
+                    <div class="nombre-producto">
+                        <p class="telefono-producto"><strong><%= product.brand.brand %> </strong></p>
+                        <p class="telefono-producto"><strong><%= product.model %> </strong></p>
+                        <p class="price">$ <%= product.price %> </p>
+                        <p class="texto">Hasta <strong>12 cuotas sin interés</strong> CON TARJETAS SELECCIONADAS</p>
+                    </div>
+
+                    <div class="tarjetas-producto">
+                        <div class="detalle-producto">
+                            Principales especificaciones
+                        </div>
+
+                        <div class="detalle">
+                            <p><i class="fa-solid fa-gear"></i>Sistema operativo <%= product.system.system %></p>
+                            <p><i class="fa-solid fa-sd-card"></i>Memoria interna <%= product.specification.internalMemory %>GB</p>
+                            <p><i class="fa-solid fa-mobile-screen"></i>Resolucion <%= product.specification.resolution %>P</p>
+                        </div>
+                    </div>
+
+                    <div class="boton-comprar-producto">
+                        <a href="./productCart"><p>Añadir al carrito</p></a>
+                    </div>
+
+                    <% if (locals.userLogged && locals.userLogged.admin) { %>
+                        <%- include('./partials/edit-btn') %> 
+                    <% } %>
+
+
+                </div>
+
+            </section>
+
+            <section class="specs">
+
+                <p class="text-detail"><%= product.description %> </p>
+                <h3 >Especificaciones</h3>
+
+                   <div class="specs-product">
+                         <div class="pantalla">
+                            <p>Tamaño de pantalla <%= product.specification.size %> inch</p>
+                            <p>Resolución de pantalla <%= product.specification.resolution %> p</p>
+                        </div>    
+
+                       <div class="camara">
+                            <p>Cámara <%= product.specification.camera %> MP</p>
+                            <p>Cámara frontal <%= product.specification.frontalCamera %> MP</p>
+                            <p>Grabacion de video <%= product.specification.recorder %>MP</p>
+                        </div>
+                        
+                        <div class="almacenamiento">
+                            <p>Ram <%= product.specification.ram %>GB </p>
+                            <p>Memoria externa <%= product.specification.externalMemory %>GB </p>
+                            <p>Memoria interna <%= product.specification.internalMemory %>GB </p>
+                        </div>                  
+                   </div>
+
+                <h4>Video referencial</h4>
+                <div class="video">
+                     <iframe width="560" height="315" src="<%= product.video %> " 
+                        title="YouTube video player" 
+                        rameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+                     encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
+            </section>
+
+        </main>
+
+        <footer>
+            <%- include ("./partials/footer")  %> 
+        </footer>
+    </body>
+</html>

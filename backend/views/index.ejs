@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <enlace href="https: //fonts.googleapis.com/css2? family= Poppins:wght@300 & family= Roboto:wght@300 & display=swap" rel="hoja de estilo"></enlace>
+    
+        <script src="https://kit.fontawesome.com/5309449a51.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/css/index.css">
+    </head>
+
+    <body>
+
+            <%- include('./partials/header'); %>    
+        
+        <div class="slide">
+			<div class="slide-inner">
+				<input class="slide-open" type="radio" id="slide-1" 
+			 	     name="slide" aria-hidden="true" hidden="" checked="checked">
+				<div class="slide-item">
+					<img src="./images/banner_1.png">
+				</div>
+				<input class="slide-open" type="radio" id="slide-2" 
+			 	     name="slide" aria-hidden="true" hidden="">
+				<div class="slide-item">
+					<img src="./images/banner_2.png">
+				</div>
+				<input class="slide-open" type="radio" id="slide-3" 
+			 	     name="slide" aria-hidden="true" hidden="">
+				<div class="slide-item">
+					<img src="./images/banner_3.png">
+				</div>
+				<label for="slide-3" class="slide-control prev control-1">‹</label>
+				<label for="slide-2" class="slide-control next control-1">›</label>
+				<label for="slide-1" class="slide-control prev control-2">‹</label>
+				<label for="slide-3" class="slide-control next control-2">›</label>
+				<label for="slide-2" class="slide-control prev control-3">‹</label>
+				<label for="slide-1" class="slide-control next control-3">›</label>
+				<ol class="slide-indicador">
+					<li>
+						<label for="slide-1" class="slide-circulo">•</label>
+					</li>
+					<li>
+						<label for="slide-2" class="slide-circulo">•</label>
+					</li>
+					<li>
+						<label for="slide-3" class="slide-circulo">•</label>
+					</li>
+				</ol>
+			</div>
+ 
+		</div>
+
+        <nav class="bottom-bar">
+            <ul class="bar">
+                
+                <li><i class="fa-solid fa-truck-fast"></i>Envios gratis a todo el país</li>
+                
+                <li><i class="fa-regular fa-credit-card"></i>Hasta 11 cuotas sin interes en productos selecionados</li>
+            </ul>
+        </nav>
+
+        <div class="bannerCel">
+            <img src="./images/bannerCel.png" class="imgCel">
+        </div>
+
+        <main>
+
+            <h3>Descubre todas las ofertas que tenemos para vos</h3>
+            <section>
+                    <% smartphone.forEach( product => { %>
+                        <div class="article">
+            
+                                <div class="name">
+                                    <h4 class="brand"><%= product.brand.brand %> </h4>
+                                    <h4 class="model"> <%= product.model %> </h4>
+                                </div>
+
+                                <img src="/images/products/<%= product.image %>" class="product_img">
+                                    
+                                <div class="box-description">
+                                    <p class="price">$ <%= product.price %> </p>
+                                    <p class="discount"><%= product.discount %>% off</p>
+                                    <div class="circle">
+                                        <p class="description">Hasta </p> 
+                                        <p class="number">11</p> 
+                                        <p class="description">cuotas sin interés</p> 
+                                    </div>
+                                    <p class="truck"><i class="fa-solid fa-truck-fast"></i>Envio gratis</p>
+                                </div>
+                                <a href="/detail/<%= product.id %> " class="btn-detail">Comprar</a>
+                        </div>
+                    <% }) %>
+            </section> 
+
+        </main>
+
+        <footer>
+
+            <%- include ("./partials/footer"); %> 
+
+        </footer>
+    </body>
+</html>

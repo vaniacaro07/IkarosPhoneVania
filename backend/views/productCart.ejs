@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <enlace href="https: //fonts.googleapis.com/css2? family= Poppins:wght@300 & family= Roboto:wght@300 & display=swap" rel="hoja de estilo"></enlace>
+        <script src="https://kit.fontawesome.com/5309449a51.js" crossorigin="anonymous"></script>
+        <!-- linkeamos CSS -->
+        <link rel="stylesheet" href="/css/productCart.css">
+    </head>
+    <body>
+
+        <%- include('./partials/header'); %>
+
+        <main>
+
+            <h1 class="title"> Carrito de compras</h1>
+
+                <div class="add-box">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <h4 class="add">Añadiste algun celular a tu lista de compras</h4>
+                </div>
+
+             <div class="main-car">
+
+                <div class="items">
+                    <p class="article">ARTICULO</p>
+                    <p class="price-item">PRECIO</p>
+                    <p class="cant-item">CANTIDAD</p>
+                    <p class="subtotal-item" >SUBTOTAL</p>
+                </div>
+
+                <div class="cart-detail">
+                    <img src="/images/products/iPhoneX.png">
+                    <p class="name">Algún Smartphone titulo</p>
+                    <div class="detail">
+                        <p class="price">PRECIO</p>
+                        <p class="cant">CANTIDAD</p>
+                    </div>
+
+                    <!-- a partir de 760 -->
+                    <div class="detail-2">
+                        <i class="price-2">$ 120000</i>
+                        <i class="cant-2">1</i>
+                        <i class="subtotal-2">$ 120000</i>
+                    </div>
+                    <!-- a partir de 760 -->
+
+                </div>
+
+                <div class="cart-sumary">
+                    <h3 class="sumary-title">Resumen de compra</h3>
+                    <p class="subtotal">Subtotal</p>
+                    <p class="tax">Impuesto</p>
+                    <strong class="total">Total del pedido</strong>
+                    <button class="btn">Iniciar Compra</button>
+                </div>
+
+             </div>
+        </main>
+
+        <footer>
+             <%- include ("./partials/footer")  %> 
+        </footer>
+
+    </body>
+</html>

@@ -1,0 +1,332 @@
+/* HEADER PRINCIPIO */
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #dcdcdc  !important;
+}
+.top-header{
+    width: 100%;
+    display: flex;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    background-color: #302e2e;
+}
+.logo {
+    width: 17%;
+    height: auto;
+    position: relative;
+    margin: 0 30px;
+}
+
+#btn-nav-main{
+    display: none;
+}
+/* HEADER FIN */
+
+/*INICIO FORMULARIO DE REGISTRO*/
+.form-register{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    margin: 25% 5% 8% 5%;
+    padding: 10px;
+}
+.form-title{
+    font-size: 22px;
+    font-weight: 400;
+    padding: 10px 12px;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 20px 10px 20px;
+}
+input{
+    position: relative;
+    padding: 10px;
+    width: 100%;
+    margin: auto;
+    border-radius: 5px;
+    border: #9d9c9c solid 1px;
+}
+
+.form-register label{
+    font-size: 14px;
+    margin: 10px 4px 5px;
+}
+.fa-solid.fa-eye{
+    position: absolute;
+    font-size: 13px;
+    bottom: 14%;
+    right: 20%;
+    color: #302e2e;
+}
+.btn-register{
+    padding: 10px 30px;
+    background-color: #ff4621;
+    border: #ff4621;
+    border-radius: 30px;
+    color: white;
+    margin: 20px;
+}
+.login{
+    margin: 10px;
+}
+.login a{
+    color: #302e2e;
+}
+
+.error{
+    color: #ff3c00;
+    font-size: 12px;
+    width: 300px;
+    display: none;
+    line-height: 15px;
+    padding: 5px;
+}
+.fa-solid.fa-circle-exclamation{ 
+    color: #ff3c00;
+    font-size: 12px;
+    position: absolute;
+    bottom: 59%;
+    left: 77%;
+    display: none;
+}
+.fa-solid.fa-circle-check{
+    color: rgb(34, 147, 6);
+    font-size: 12px;
+    position: absolute;
+    bottom: 59%;
+    left: 77%;
+    display: none;
+}
+/*FIN FORMULARIO DE REGISTRO*/
+
+/* FOOTER PRINCIPIO */
+footer{
+    width: 100%;
+    background-color: white;
+}
+.footer-title{
+    font-size: 25px;
+    font-weight: 400;
+    color: #302e2e;
+    margin: 10px 0 30px 10px;
+}
+.footer-top{
+    margin-top: 30px;
+    background-color: #302e2e;
+}
+.footer-top nav ul{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 10px;
+}
+.fa-brands.fa-instagram, 
+.fa-brands.fa-twitter,
+.fa-brands.fa-facebook-f{
+    margin: 5px;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: white;
+    color: #302e2e;
+    width: 40px;
+    height: 40px;
+    line-height: 43px;
+}  
+.footer-middle{
+    display: none;
+}
+.footer-bottom{
+    display: none;
+}
+/* FOOTER FIN */
+
+/* MEDIA QUERIES PRINCIPIO */
+@media(min-width: 760px){
+    .nav-main{
+        display: none;
+    }
+    .logo {
+        width: 30%;
+        position: relative;
+        right: 25%;
+    }
+    .icons-left-text{
+        display: block;
+        position: absolute;
+        bottom: 35%;
+        right: 75%;
+    }
+    .location{
+        display: flex;
+        color: #fbfbfb;
+        align-self: center;
+        font-size: 6px
+    }
+    .location-2{
+        display: flex;
+        font-size: 12px;
+        color: #fbfbfb;
+    }
+    .nav-top{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 30%;
+    }
+    .nav-top a{
+        font-size: 12px;
+    }
+    header nav a{
+        color: #F5F5DC;
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+    nav ul{
+        display: flex;
+        justify-content: space-around;
+    }
+    .icons-right{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        color: #fbfbfb;
+        font-size: 12px;
+        width: 50%;
+    }
+
+    .user-nav-bar li{
+        font-size: 13px;
+        padding: 10px 0;
+    }
+    .user-nav-bar{
+        position: absolute;
+        border-radius: 10px;
+        top: 68%;
+        right: 0%;
+        background-color: #302e2ed6;
+        padding: 20px 8px 8px 8px;
+        transform: scaleY(0);
+        transition: all 0.5s ease;
+        transform-origin: top
+    }
+    .user-icon:hover .user-nav-bar{
+        transform: scaleY(1);
+    }
+
+    .icons-left, .icons-right{
+        width: 25%;
+    }
+    .icons-right div a{
+        color: #fbfbfb;
+    }
+    .bars-icon{
+        display: none;
+    }
+
+    .searcher input{
+        width: 0px;
+        height: 20px;
+        text-align: center;
+        border-radius: 20px;
+        outline: none;
+        border: 0px;
+        transition: all 0.6s ease;
+    }
+    .searcher:hover input{
+        width: 150px;
+    }
+    .searcher input:focus{
+        width: 150px;
+    }
+
+    /*fin header*/
+
+    /*INICIO FORMULARIO DE REGISTRO*/
+.form-register{
+    margin: 12% 20% 8% 20%;
+    padding: 10px;
+}
+.form-title{
+    font-size: 26px;
+    font-weight: 400;
+    padding: 10px 12px;
+}
+/*FIN FORMULARIO DE REGISTRO*/
+}
+
+
+@media(min-width: 1200px){
+    .logo {
+        width: 20%;
+        left: 8%;
+    }
+    .icons-left-text{
+        bottom: 35%;
+        right: 81%;
+    }
+    .location{
+        font-size: 10px
+    }
+    .location-2{
+        font-size: 14px;
+    }
+    .nav-top{
+        padding-left: 60px;
+    }
+    .nav-top a{
+        font-size: 14px;
+        padding-right: 60px;
+    }
+    .icons-left, .icons-right{
+        width: 30%;
+    }
+    .icons-left{
+        margin-left: -12%;
+        margin-right: 8%;
+    }
+
+    .user-nav-bar li{
+        font-size: 15px;
+    }
+    .user-nav-bar{
+        position: absolute;
+        top: 60%;
+        right: 5%;
+        padding: 30px 15px 15px 15px;
+    }
+    
+    .searcher:hover input{
+        width: 240px;
+    }
+    .searcher input:focus{
+        width: 240px;
+    }
+
+    .var a{
+        font-size: 14px;
+        margin: 0 60px;
+    }
+
+     /*INICIO FORMULARIO DE REGISTRO*/
+.form-register{
+    margin: 8% 30% 5% 30%;
+}
+.form-title{
+    font-size: 28px;
+    padding: 15px 12px;
+}
+/*FIN FORMULARIO DE REGISTRO*/
+}

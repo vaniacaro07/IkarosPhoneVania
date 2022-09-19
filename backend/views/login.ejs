@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Login Ikaro's Phones</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+        <link rel="stylesheet" href="css/login.css">
+        <script src="https://kit.fontawesome.com/5309449a51.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <%- include('./partials/header'); %>
+
+        <main>
+            <form  action="/login" method="POST" class="form-login">
+
+                <h4 class="form-title"> Ingresar con mi cuenta </h4>
+
+                <div class="container">
+                    <label for="email"></label>
+                    <input type="email" name="email" id="email" placeholder="example@gmail.com">
+                    <p style="color:#ff3c00"> <%= (locals.errors && errors.email ? errors.email.msg : null) %> </p>
+                </div>
+
+                <div class="container">
+                    <label for="password"></label>
+                    <input type="password" name="password" id="password" placeholder="ingresa tu contraseña">
+                    <i class="fa-solid fa-eye"></i>
+                    <p style="color:#ff3c00"> <%= (locals.errors && errors.password ? errors.password.msg : null) %> </p>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <label for="remember" class="form-label-checkbox">Recordar mi contraseña</label>
+                    <input type="checkbox" name="remember">  
+                </div>
+        
+                <button type="submit" class="btn-login">INGRESAR</button>
+
+                <div class="register">
+                    <a href="./register">¿No tiene una cuenta? Regístrese</a>
+                </div>
+
+            </form>
+
+            <div class="legales">
+                <a href=""> Terminos y condiciones </a>
+                <a href=""> Uso de datos personales </a>
+                <a href=""> Ayuda </a>
+            </div>
+
+        </main>
+
+        <footer>
+            <%- include ("./partials/footer")  %> 
+        </footer>
+    </body>
+</html>

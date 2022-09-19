@@ -1,0 +1,158 @@
+<% if (isAuthenticated) { %>
+   <header>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <div class="top-header">
+
+                <nav class="nav-main">
+
+                    <input type="checkbox" 
+                    class="btn-bars" id="btn-nav-main">
+                    
+                    <label for="btn-nav-main" class="btn-bars-icon">
+                        <div class="icon one"></div>
+                        <div class="icon two"></div>
+                        <div class="icon three"></div>
+                    </label>
+                    
+                    <div class="nav-main-menu">
+                        <a href="#">Buscar</a>
+                        <a href="#">Promociones</a>
+                        <a href="../products">Productos</a>
+                        
+                        <a href="../productCart">Mi carrito</a>
+                        <a href="#">Ayuda</a>
+                    </div>
+                    
+                </nav>
+
+                <div class="icons-left">
+                    <img class="logo" src="/images/LogoIkarosPhonesenbaja.png">
+                    <div class="icons-left-text">
+                        <div class="location">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <h4>Estás en</h4>
+                        </div>
+                        <div class="location-2">
+                            <p class="location-text">Capital Federal</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nav-top">
+                    <nav>
+                        <ul>
+                            <li><a href="../products" class="text-center">Promociones</a></li>
+                            <li><a href="../products" class="text-center">Productos</a></li>
+                            <li><a href="#" class="text-center">Ayuda</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="icons-right">
+
+                    <!-- barra de busqueda -->
+                    <div class="searcher">
+                        <input type="text" placeholder="Buscar" id="searcher">
+                        <i class="fa fa-search"></i>
+
+                        <script src="/js/search.js"></script>
+                    </div>
+                    <!-- barra de busqueda -->
+
+                    <div class="user-icon">
+                        <i class="fa-regular fa-user"></i>
+                        <div class="user-nav-bar">
+                            <a href="/logout">Cerrar Sesión</a>
+                        </div>    
+                    </div>
+
+                    <div>
+                        <a href="../productCart"><i class="fa-solid fa-bag-shopping"></i></a>
+                    </div>           
+                </div>
+
+            </div>
+
+    </header>
+
+    <% } else { %>
+
+    <header>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <div class="top-header">
+        
+                <nav class="nav-main">
+        
+                    <input type="checkbox" 
+                    class="btn-bars" id="btn-nav-main">
+                            
+                    <label for="btn-nav-main" class="btn-bars-icon">
+                            <div class="icon one"></div>
+                            <div class="icon two"></div>
+                            <div class="icon three"></div>
+                    </label>
+                            
+                    <div class="nav-main-menu">
+                        <a href="#">Buscar</a>
+                        <a href="#">Promociones</a>
+                        <a href="../products">Productos</a>
+                        <a href="../login">Iniciar sesión</a>
+                        <a href="#">Ayuda</a>
+                    </div>
+                            
+                </nav>
+        
+                <div class="icons-left">
+                     <img class="logo" src="/images/LogoIkarosPhonesenbaja.png">
+                    <div class="icons-left-text">
+                        <div class="location">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <h4>Estás en</h4>
+                        </div>
+                        <div class="location-2">
+                            <p class="location-text">Capital Federal</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="nav-top">
+                    <nav>
+                        <ul>
+                            <li><a href="../products" class="text-center">Promociones</a></li>
+                            <li><a href="../products" class="text-center">Productos</a></li>
+                            <li><a href="#" class="text-center">Ayuda</a></li>
+                        </ul>
+                    </nav>
+                </div>
+        
+                <div class="icons-right">
+        
+                    <div class="searcher">
+                        <input type="text" placeholder="Buscar">
+                        <i class="fa fa-search"></i>
+                    </div>
+        
+                    <div class="user-icon">
+                        <i class="fa-regular fa-user"></i>
+                        <div class="user-nav-bar">
+                            <ul>
+                                <li><a href="../register">Registrarme</a></li>
+                                <li><a href="../login">Iniciar Sesión</a></li>
+                            </ul>
+                        </div>               
+                    </div>
+                   
+                </div>
+        
+            </div>
+        
+        </header>
+    <% } %>
+
+        
+        
+        

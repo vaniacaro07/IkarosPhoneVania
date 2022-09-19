@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <enlace href="https: //fonts.googleapis.com/css2? family= Poppins:wght@300 & family= Roboto:wght@300 & display=swap" rel="hoja de estilo"></enlace>
+    
+        <script src="https://kit.fontawesome.com/5309449a51.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/css/products.css">
+    </head>
+
+    <body>
+
+            <%- include('./partials/header'); %>
+
+        <main>              
+
+        <div class="logos-cel">
+            <div><img src="/images/logos/1.png"><a href="#">HUAWEI</a></div>
+            <div><img src="/images/logos/2.png"><a href="#">ZTE</a></div>
+            <div><img src="/images/logos/3.png"><a href="#">XIAOMI</a></div>
+            <div><img src="/images/logos/4.png"><a href="#">MOTOROLA</a></div>
+            <div><img src="/images/logos/5.png"><a href="#">SAMSUNG</a></div>
+            <div><img src="/images/logos/6.png"><a href="#">APPLE</a></div>  
+        </div> 
+    
+            <h3>Descubre las mejores promociones</h3>
+            <section>
+
+                    <% product.forEach( product => { %>
+                        <div class="article">
+
+                            <div class="name">
+                                <h4 class="brand"> <%= product.brand.brand %> </h4>
+                                <h4 class="model"> <%= product.model %> </h4>
+                            </div>
+                                   
+                            <img src="/images/products/<%= product.image %>" class="product_img">
+                            
+                            <div class="box-description">
+                                <p class="price">$ <%= product.price %> </p>
+                                <p class="discount"> <%= product.discount %>% off</p>
+                                <div class="circle">
+                                    <p class="description">Hasta </p> 
+                                    <p class="number">11</p>
+                                    <p class="description">cuotas sin interés</p>
+                                </div>
+                                <p class="truck"><i class="fa-solid fa-truck-fast"></i>Envio gratis</p>
+                            </div>
+                            <a href="/detail/ <%= product.id %> " class="btn-detail">Comprar</a>
+                            
+                        </div>
+                    <% }) %> 
+
+            </section> 
+
+        </main>
+
+        <footer>
+
+            <%- include ("./partials/footer"); %> 
+
+        </footer>
+    </body>
+</html>
